@@ -1,0 +1,746 @@
+focus_tree = {
+	id = brazil_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = BRA
+
+		}
+	}
+	
+	default = no
+
+	continuous_focus_position = { x = 50 y = 2000 }
+
+	focus = {
+		id = Aftermath_of_The_1935_ANL_Insurrection
+		icon = GFX_focus_ITA_peasants_rise
+		x = 14
+		y = 5
+		#relative_position_id = CAN_halifax_shipyards
+		
+		available = {
+		}
+		bypass = {
+		}
+		
+		cost = 5
+        #prerequisite = {focus = deez}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 75
+			add_stability = -.15
+
+		}
+		ai_will_do = {
+		}
+
+	}
+	focus = {
+		id = Luís_Carlos_Prestes
+		icon = GFX_focus_SOV_bukharinists
+		x = 0
+		y = 1
+		relative_position_id = Aftermath_of_The_1935_ANL_Insurrection
+		
+		available = {
+		}
+		bypass = {
+		}
+		
+		cost = 10
+        prerequisite = {focus = Aftermath_of_The_1935_ANL_Insurrection}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 50
+			add_stability = -.05
+		}
+		ai_will_do = {
+		}
+
+	}
+	focus = {
+		id = Deport_Communist_Radicals
+		icon = GFX_goal_generic_forceful_treaty
+		x = 0
+		y = 1
+		relative_position_id = Luís_Carlos_Prestes
+		
+		available = {
+		}
+		bypass = {
+		}
+		
+		cost = 5
+        prerequisite = {focus = Luís_Carlos_Prestes}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 50
+			add_timed_idea = {
+				idea = Deporting_ANL_Radicalists
+				days = 365
+			remove_ideas = The_1935_ANL_Insurrection
+			}
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = Embrace_Brazilian_Nationalism
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = -2
+		y = 1
+		relative_position_id = Deport_Communist_Radicals
+		
+		available = {
+		}
+		bypass = {
+		}
+		
+		cost = 5
+        prerequisite = {focus = Deport_Communist_Radicals}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 25
+			add_stability = -.025
+			add_popularity = {
+				ideology = fascism
+				popularity = .05
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = .1
+			}
+			add_war_support = .05
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = Appoint_Right-Wing_Politicans
+		icon = GFX_focus_generic_military_mission
+		x = 0
+		y = 1
+		relative_position_id = Deport_Communist_Radicals
+		
+		available = {
+		}
+		bypass = {
+		}
+		
+		cost = 5
+        prerequisite = {focus = Deport_Communist_Radicals}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 50
+			add_stability = -.025
+			add_popularity = {
+				ideology = fascism
+				popularity = .05
+			}
+		}
+		ai_will_do = {
+		}
+	}
+	focus = {
+		id = Reorganize_the_Army
+		icon = GFX_focus_SOV_mobilization_plan
+		x = 2
+		y = 1
+		relative_position_id = Deport_Communist_Radicals
+		
+		available = {
+		}
+		bypass = {
+		}
+		
+		cost = 5
+        prerequisite = {focus = Deport_Communist_Radicals}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_command_power = 25
+			add_war_support = .05
+			add_ideas = { Restructure_of_the_Exercito_Brasileiro }
+		}
+		ai_will_do = {
+		}
+	}
+		focus = {
+		id = Abolish_the_Brazlian_Congress
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		x = 0
+		y = 1
+		relative_position_id = Appoint_Right-Wing_Politicans
+		
+		available = {
+		}
+		bypass = {
+		}
+		
+		cost = 10
+        prerequisite = {focus = Embrace_Brazilian_Nationalism}
+		prerequisite = {focus = Appoint_Right-Wing_Politicans}
+		prerequisite = {focus = Reorganize_the_Army}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_stability = -.1
+			add_popularity = {
+				ideology = neutrality
+				popularity = .1
+			}
+		}
+		ai_will_do = {
+		}
+	}
+		focus = {
+		id = Estado_Novo
+		icon = GFX_focus_generic_military_dictatorship
+		x = 0
+		y = 1
+		relative_position_id = Abolish_the_Brazlian_Congress
+		
+		available = {
+		date < 1937.1.1
+		}
+		bypass = {
+		}
+		
+		cost = 8
+        prerequisite = {focus = Abolish_the_Brazlian_Congress}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_war_support = .05
+			add_stability = .1
+			add_research_slot = 1
+			add_ideas = Estado_Novo
+		}
+		ai_will_do = {
+		}
+	}
+		focus = {
+		id = Recovering_Brazilian_Economy
+		icon = GFX_goal_generic_production
+		x = -5
+		y = 1
+		relative_position_id = Estado_Novo
+		
+		available = {
+		date > 1936.3.1
+		}
+		bypass = {
+		}
+		
+		cost = 5
+        prerequisite = {
+			focus = Estado_Novo
+		}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = BRA_Great_Depression
+				add_idea = BRA_Recovering_Depression
+			}
+			if = {
+				limit = {
+					has_full_control_of_state = 500
+				}
+				500 = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_full_control_of_state = 501
+				}
+				501 = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+		ai_will_do = {
+		}
+	}
+		focus = {
+		id = State_Sponsored_Industry
+		icon = GFX_goal_generic_construct_civ_factory
+		x = -1
+		y = 1
+		relative_position_id = Recovering_Brazilian_Economy
+		
+		available = {
+		date > 1937.3.1
+		}
+		bypass = {
+		}
+		
+		cost = 10
+        prerequisite = {
+			focus = Recovering_Brazilian_Economy
+		}
+		mutually_exclusive = { focus = Capitalist_Sponsored_Industry }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 50
+			add_stability = -.05
+			limit = {
+					has_full_control_of_state = 501
+				}
+				501 = {
+					add_extra_state_shared_building_slots = 4
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+						}
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+				}
+		}
+		ai_will_do = {
+		}
+	}
+		focus = {
+		id = Capitalist_Sponsored_Industry
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 1
+		y = 1
+		relative_position_id = Recovering_Brazilian_Economy
+		
+		available = {
+		date > 1937.3.1
+		}
+		bypass = {
+		}
+		
+		cost = 10
+        prerequisite = {
+			focus = Recovering_Brazilian_Economy
+		}
+		mutually_exclusive = { focus = State_Sponsored_Industry }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 50
+			add_stability = .025
+			limit = {
+					has_full_control_of_state = 501
+				}
+				501 = {
+					add_extra_state_shared_building_slots = 5
+					add_building_construction = {
+						type = industrial_complex
+						level = 3
+						instant_build = yes
+						}
+				}
+		}
+		ai_will_do = {
+		}
+	}
+		focus = {
+		id = Rio_Grande_Plex
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 0
+		y = 1
+		relative_position_id = State_Sponsored_Industry
+		
+		available = {
+		date > 1937.3.1
+		}
+		bypass = {
+		}
+		
+		cost = 10
+        prerequisite = {
+			focus = State_Sponsored_Industry
+		}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = BRA_Industry_Bonus
+				bonus = 1.0
+				uses = 2
+				category = industry
+				}
+			limit = {
+					has_full_control_of_state = 500
+				}
+				500 = {
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+						}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+		}
+		ai_will_do = {
+		}
+
+	}
+		focus = {
+		id = Synthetic_Studies
+		icon = GFX_goal_generic_oil_refinery
+		x = 0
+		y = 1
+		relative_position_id = Standarized_Housing
+		
+		available = {
+		date > 1937.3.1
+		}
+		bypass = {
+		}
+		
+		cost = 7
+        prerequisite = {
+			focus = Standarized_Housing
+		}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = BRA_Synthetic_Studies
+				bonus = 2.5
+				uses = 3
+				category = synth_resources
+				}
+			limit = {
+					has_full_control_of_state = 498
+				}
+				498 = {
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = synthetic_refinery
+						level = 2
+						instant_build = yes
+						}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+		}
+		ai_will_do = {
+		}
+
+	}
+		focus = {
+		id = Arms_Manufactories
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 0
+		y = 1
+		relative_position_id = Rio_Grande_Plex
+		
+		available = {
+		}
+		bypass = {
+		}
+		
+		cost = 7
+        prerequisite = { focus = Rio_Grande_Plex }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = BRA_industry_boost
+				bonus = 2.0
+				uses = 1
+				category = 
+			limit = {
+					has_full_control_of_state = 499
+				}
+				499 = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+						}
+
+					}
+				}
+		}
+		ai_will_do = {
+		}
+	}
+		focus = {
+		id = Standarized_Housing
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 0
+		y = 1
+		relative_position_id = Capitalist_Sponsored_Industry
+		
+		available = {
+		}
+		bypass = {
+		}
+		
+		cost = 10
+        prerequisite = { focus = Capitalist_Sponsored_Industry }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = BRA_industry_boost
+				bonus = 2.0
+				uses = 1
+				category = #industry_tech
+			limit = {
+					has_full_control_of_state = 499
+				}
+				499 = {
+					add_extra_state_shared_building_slots = 2
+					add_building_construction = {
+						type = industrial_complex
+						level = 2
+						instant_build = yes
+						}
+
+					}
+				}
+		}
+		ai_will_do = {
+		}
+	}
+		focus = {
+		id = Recovering_Army
+		icon = GFX_focus_generic_little_entente
+		x = 20
+		y = 11
+		relative_position_id = Estado Novo
+		
+		available = {
+		}
+		bypass = {
+		}
+		
+		cost = 6
+        prerequisite = {
+			focus = Estado_Novo
+		}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_war_support = .05
+			army_experience = 75
+
+		}
+		ai_will_do = {
+		}
+	}
+		focus = {
+		id = Support_the_SPA
+		icon = GFX_focus_spr_no_pasaran
+		x = -2
+		y = 1
+		relative_position_id = Recovering_Army
+		
+		available = {
+		SPR_scw_in_progress = yes
+		}
+		bypass = {
+		}
+		
+		cost = 4
+        prerequisite = {focus = Recovering_Army}
+		
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		}
+		ai_will_do = {
+		}
+	}
+		focus = {
+		id = Standardize_Military_Trainings
+		icon = GFX_focus_prc_infiltration
+		x = 0
+		y = 1
+		relative_position_id = Recovering_Army
+		
+		available = {
+		}
+		bypass = {
+		}
+		
+		cost = 6
+        prerequisite = {focus = Recovering_Army}
+		
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+
+		}
+		ai_will_do = {
+		}
+	}
+		focus = {
+		id = New_Battle_Tactics
+		icon = GFX_focus_generic_military_academy
+		x = 2
+		y = 1
+		relative_position_id = Recovering_Army
+		
+		available = {
+		}
+		bypass = {
+		}
+		
+		cost = 6
+        prerequisite = {focus = Recovering_Army}
+		
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+
+		}
+		ai_will_do = {
+		}
+	}
+		focus = {
+		id = War_Games
+		icon = GFX_goal_generic_air_doctrine
+		x = 1
+		y = 2
+		relative_position_id = Recovering_Army
+		
+		available = {
+		}
+		bypass = {
+		}
+		
+		cost = 10
+        prerequisite = {
+		focus = Standardize_Military_Trainings
+		focus = New_Battle_Tactics
+		}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+
+		}
+		ai_will_do = {
+		}
+	}
+		focus = {
+		id = Restructured_Military
+		icon = GFX_focus_ITA_albanian_fascist_militia
+		x = 0
+		y = 1
+		relative_position_id = War_Games
+		
+		available = {
+		}
+		bypass = {
+		}
+		
+		cost = 10
+        prerequisite = {
+		focus = War_Games
+		}
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+		remove_ideas = Restructure_of_the_Exercito_Brasileiro
+		}
+		ai_will_do = {
+		}
+	}
+	
+}		
