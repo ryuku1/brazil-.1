@@ -1,0 +1,151 @@
+﻿###########################
+# Brazil Events
+###########################
+
+add_namespace = brazil
+
+country_event = {
+	id = brazil.1
+	title = "Aftermath of the 1935 Insurrection"
+	desc = brazil.1.d
+	picture = GFX_report_event_bul_partisans_plovdiv
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Vida Brazil!"
+		ai_chance = { factor = 90 }
+		add_stability = -0.15
+		add_war_support = -.05
+	}
+}
+country_event = {
+	id = brazil.2
+	title = "Question of Luís Carlos Prestes"
+	desc = brazil.2.d
+	picture = GFX_report_event_gre_allied_diplomacy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Execute Luís"
+		ai_chance = { factor = 10 }
+		add_stability = -0.05
+		add_war_support = .05
+	}
+	option = {
+		name = "Imprison Luís for Life"
+		ai_chance = { factor = 90 }
+		add_stability = 0.05
+		add_war_support = -.05
+	}
+}
+country_event = {
+	id = brazil.3
+	title = "State of the Army"
+	desc = brazil.3.d
+	picture = GFX_report_event_manchukuo_army_2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "For the Greater Good"
+		ai_chance = { factor = 10 }
+		add_war_support = .025
+		add_ideas = { Restructure_of_the_Exercito_Brasileiro }
+	}
+}
+country_event = {
+	id = brazil.4
+	title = "The 1937 Brazilian coup d'état"
+	desc = brazil.4.d
+	picture = GFX_report_event_SOV_national_academy_of_sciences
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Good Rindance"
+		ai_chance = { factor = 10 }
+		add_stability = -.1
+	}
+}
+country_event = {
+	id = brazil.5
+	title = "Supporting Far-Right Spanish Forces"
+	desc = brazil.5.d
+	picture = GFX_report_event_ITA_italian_civil_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Send Volunteers"
+		ai_chance = { factor = 10 }
+	}
+}
+country_event = {
+	id = brazil.6
+	title = "Dia da Independencia"
+	desc = brazil.6.d
+	picture = GFX_report_event_DEN_celebration
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = BRA
+		date > 1936.9.1
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "Viva Brasil!"
+		ai_chance = { factor = 10 }
+		add_stability = .025
+	}
+}
+country_event = {
+	id = brazil.7
+	title = "State of Brazil"
+	desc = brazil.7.d
+	picture = GFX_report_event_NOR_quisling_rally
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Declare Neutrality"
+		ai_chance = { factor = 10 }
+		add_war_support = .05
+		add_stability = .03
+	}
+}
+country_event = {
+	id = brazil.8
+	title = "Atlantic Trade"
+	desc = brazil.8.d
+	picture = GFX_report_event_sailors_in_working_rig
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Prioritize Civilian Trade"
+		ai_chance = { factor = 10 }
+		add_equipment_to_stockpile = { 
+				type = convoy 
+				amount = 105
+				producer = BRA
+			}
+		add_stability = .05
+	}
+	option = {
+		name = "Prioritize Military Trade"
+		ai_chance = { factor = 10 }
+		add_equipment_to_stockpile = { 
+				type = convoy 
+				amount = 65
+				producer = BRA
+			}
+		add_war_support = .075
+	}
+}
